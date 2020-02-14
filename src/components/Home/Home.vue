@@ -1,18 +1,27 @@
 <template>
-  <div class="jumbotron">
-    <h1>Meehoi Gallery</h1>
+  <div class="Home">
+    <div class="jumbotron">
+      <h1>Meehoi Gallery</h1>
+    </div>
+    <ImageList />
   </div>
 </template>
 
 <script>
-export default {}
+import Vue from 'vue'
+import ImageList from './ImageList'
+
+export default Vue.extend({
+  name: 'Home',
+  components: { ImageList },
+})
 </script>
 
 <style lang="scss" scoped>
 .jumbotron {
   height: 500px;
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url('../../assets/images/DSC06153.jpg') no-repeat center/cover;
+    url('http://localhost:3000/img/DSC06153.jpg') no-repeat center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
