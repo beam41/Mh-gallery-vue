@@ -1,5 +1,5 @@
 <template>
-  <div class="Home">
+  <div class="Home f-nav">
     <div class="jumbotron">
       <h1>Meehoi Gallery</h1>
     </div>

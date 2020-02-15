@@ -1,8 +1,21 @@
 <template>
   <div id="app">
+    <Navbar />
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Navbar from './components/Navbar/Navbar.vue'
+
+export default Vue.extend({
+  name: 'App',
+  components: {
+    Navbar,
+  },
+})
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:700|Alegreya+Sans:300,300i,400,700&display=swap');
@@ -18,7 +31,8 @@ h3,
 h4,
 h5,
 h6,
-.btn {
+.btn,
+a {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: bold;
 }
@@ -31,15 +45,29 @@ p {
 .btn {
   background: none;
   border: 2px solid black;
+  outline: 3px solid white;
   font-size: 1.25em;
   padding: 0.1em 0.5em;
+  transition-duration: 250ms;
 
   &:hover {
     cursor: pointer;
+    background: black;
+    color: white;
+    border: 2px solid white;
+    outline: 3px solid black;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
 .light {
   font-weight: 300;
+}
+
+.f-nav {
+  margin-top: 50px;
 }
 </style>

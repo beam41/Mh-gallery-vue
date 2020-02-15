@@ -1,5 +1,5 @@
 <template>
-  <div class="imgpage">
+  <div class="imgpage f-nav">
     <div class="im">
       <img :src="'http://localhost:3000/img/' + imgName" :alt="imgName" />
     </div>
