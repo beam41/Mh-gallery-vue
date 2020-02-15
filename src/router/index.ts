@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../components/Home/Home.vue'
-import Image from '../components/Image.vue'
+import ImageView from '../components/ImageView/ImageView.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/image',
+    path: '/image/:name',
     name: 'Image',
-    component: Image,
+    component: ImageView,
   },
 ]
 

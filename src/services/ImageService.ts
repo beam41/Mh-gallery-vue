@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Img } from '@/models/Img'
+import { Image } from '@/models/Image'
 
 const app = axios.create({
   baseURL: 'http://localhost:3000',
@@ -7,4 +8,9 @@ const app = axios.create({
 
 export async function getList(): Promise<Img[]> {
   return app.get('/imgs').then(val => val.data)
+}
+
+export async function getImageInfo(name: string): Promise<Image> {
+  const spl = name.split('.')
+  return app.get(`/info/${spl[1]}/${spl[0]}`).then(val => val.data)
 }

@@ -14,6 +14,9 @@ import ImageList from './ImageList'
 export default Vue.extend({
   name: 'Home',
   components: { ImageList },
+  created() {
+    document.title = 'Meehoi Gallery'
+  },
 })
 </script>
 
