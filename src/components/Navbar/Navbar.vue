@@ -25,7 +25,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 nav {
   position: fixed;
-  background-color: #292929;
+  background: #292929;
   height: 50px;
   top: 0;
   width: 100%;

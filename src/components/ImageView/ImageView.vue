@@ -44,7 +44,7 @@
             – ${{ price.price }}+
           </p>
           <p><i>Free Shipping</i></p>
-          <button class="btn">Add To cart</button>
+          <button class="btn" v-on:click="addToCart(imgInfo)">Add To cart</button>
         </div>
       </div>
     </div>
@@ -55,6 +55,7 @@
 import Vue from 'vue'
 import { Image } from '../../models/Image'
 import { getImageInfo } from '@/services/ImageService'
+import { ImageCart } from '../../models/ImageCart'
 
 export default Vue.extend({
   name: 'ImageView',
@@ -78,6 +79,11 @@ export default Vue.extend({
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+  },
+  methods: {
+    addToCart(img: Image) {
+      this.$store.dispatch('addItem', (img as unknown) as ImageCart)
     },
   },
 })

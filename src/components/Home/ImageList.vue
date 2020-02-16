@@ -1,12 +1,10 @@
 <template>
   <div :v-if="images" class="container">
     <div v-for="image in images" :key="image.imgn" class="box">
-      <div v-on:click="imgClick(image.imgn)">
-        <img :src="'http://localhost:3000/img/' + image.imgn" :alt="image.imgn" />
-        <h2>{{ image.name }}</h2>
-        <p class="light">{{ image.price | priceTxt }}</p>
-        <button class="btn">Add to Cart</button>
-      </div>
+      <img :src="'http://localhost:3000/img/' + image.imgn" :alt="image.imgn" />
+      <h2>{{ image.name }}</h2>
+      <p class="light">{{ image.prices[0].price | priceTxt }}</p>
+      <button class="btn" v-on:click="imgClick(image.imgn)">View</button>
     </div>
   </div>
 </template>
@@ -57,28 +55,19 @@ export default Vue.extend({
 
   margin: 0;
   padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   & img {
     width: 100%;
+    margin: 0 0 0.5em;
   }
 
   &:after {
     display: table;
     clear: both;
     content: '';
-  }
-
-  & > div {
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition-duration: 250ms;
-  }
-
-  & > div:hover {
-    box-shadow: 0 0 4px 0 black;
-    cursor: pointer;
   }
 
   & h2 {

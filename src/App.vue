@@ -38,8 +38,7 @@ a {
 }
 
 p {
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 1.1em;
+  font: 1.1em 'Alegreya Sans', sans-serif;
 }
 
 .btn {
