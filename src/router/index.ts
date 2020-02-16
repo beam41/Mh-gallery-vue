@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '../components/Home/Home.vue'
 import ImageView from '../components/ImageView/ImageView.vue'
+import Cart from '../components/Cart/Cart.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/image/:name',
     name: 'Image',
     component: ImageView,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
   },
 ]
 

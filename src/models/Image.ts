@@ -9,4 +9,6 @@ export class Image {
   iso: number
   focal: number
   prices: { type: string; price: number }[]
+  willBuy: number
+  priceValid: boolean
 }

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view />
+    <transition name="fade">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -23,6 +25,7 @@ export default Vue.extend({
 
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h1,
@@ -56,10 +59,6 @@ p {
     border: 2px solid white;
     outline: 3px solid black;
   }
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .light {
@@ -68,5 +67,16 @@ p {
 
 .f-nav {
   margin-top: 50px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 125ms;
+  transition-property: opacity;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>

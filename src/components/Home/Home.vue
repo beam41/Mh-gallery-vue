@@ -15,6 +15,7 @@ export default Vue.extend({
   name: 'Home',
   components: { ImageList },
   created() {
+    window.scrollTo(0, 0)
     document.title = 'Meehoi Gallery'
   },
 })

@@ -12,12 +12,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { getList } from '@/services/ImageService'
-import { Img } from '../../models/Img'
+import { Image } from '../../models/Image'
 
 export default Vue.extend({
   name: 'ImageList',
   data: () => ({
-    images: null as Img[] | null,
+    images: null as Image[] | null,
   }),
   methods: {
     imgClick(imgn: string) {

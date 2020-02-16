@@ -43,7 +43,9 @@
             <strong>{{ price.type | capital }}</strong>
             – ${{ price.price }}+
           </p>
-          <p><i>Free Shipping</i></p>
+          <p>
+            <i>Free Shipping</i>
+          </p>
           <button class="btn" v-on:click="addToCart(imgInfo)">Add To cart</button>
         </div>
       </div>
@@ -55,7 +57,6 @@
 import Vue from 'vue'
 import { Image } from '../../models/Image'
 import { getImageInfo } from '@/services/ImageService'
-import { ImageCart } from '../../models/ImageCart'
 
 export default Vue.extend({
   name: 'ImageView',
@@ -68,6 +69,7 @@ export default Vue.extend({
     imgInfo: null as Image | null,
   }),
   created() {
+    window.scrollTo(0, 0)
     document.title = 'Meehoi Gallery — ' + this.imgName
     getImageInfo(this.imgName).then(val => {
       this.imgInfo = val
@@ -83,7 +85,7 @@ export default Vue.extend({
   },
   methods: {
     addToCart(img: Image) {
-      this.$store.dispatch('addItem', (img as unknown) as ImageCart)
+      this.$store.dispatch('addItem', img)
     },
   },
 })
@@ -123,7 +125,7 @@ img {
   justify-content: space-between;
 
   & > div {
-    padding: 0 10px;
+    padding: 0 20px;
   }
 }
 

@@ -1,12 +1,11 @@
 import axios from 'axios'
-import { Img } from '@/models/Img'
 import { Image } from '@/models/Image'
 
 const app = axios.create({
   baseURL: 'http://localhost:3000',
 })
 
-export async function getList(): Promise<Img[]> {
+export async function getList(): Promise<Image[]> {
   return app.get('/imgs').then(val => val.data)
 }
 
