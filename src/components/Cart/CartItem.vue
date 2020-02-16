@@ -35,7 +35,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Image } from '@/models/Image'
 export default Vue.extend({
   name: 'CartItem',
   props: {

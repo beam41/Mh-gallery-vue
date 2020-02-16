@@ -69,7 +69,6 @@ export default Vue.extend({
     imgInfo: null as Image | null,
   }),
   created() {
-    window.scrollTo(0, 0)
     document.title = 'Meehoi Gallery — ' + this.imgName
     getImageInfo(this.imgName).then(val => {
       this.imgInfo = val

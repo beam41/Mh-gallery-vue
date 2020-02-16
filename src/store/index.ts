@@ -16,10 +16,10 @@ const store = new Vuex.Store({
       state.carts.splice(index, 1)
     },
     EDIT_VALID(state, { index, valid }) {
-      state.carts[index].priceValid = valid
+      Vue.set(state.carts, index, { ...state.carts[index], priceValid: valid })
     },
     EDIT_WILLBUY(state, { index, price }) {
-      state.carts[index].willBuy = price
+      Vue.set(state.carts, index, { ...state.carts[index], willBuy: price })
     },
   },
   actions: {
@@ -39,6 +39,9 @@ const store = new Vuex.Store({
   getters: {
     getItems: state => {
       return state.carts
+    },
+    sumTotal: state => {
+      return state.carts.reduce((acc: number, curr: Image) => acc + curr.willBuy, 0)
     },
   },
 })

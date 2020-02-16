@@ -1,6 +1,6 @@
 <template>
   <div class="cart_list">
-    <div class="cart_i" v-for="(item, index) in items" :key="item.imgn">
+    <div class="cart_i" v-for="(item, index) in items" :key="item.imgn+index">
       <CartItem :item="item" :index="index" />
     </div>
   </div>
@@ -25,7 +25,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .cart_list {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 265px);
   overflow-y: scroll;
 }
 .cart_i {

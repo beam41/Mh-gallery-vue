@@ -3,20 +3,29 @@
     <div class="container">
       <h2>Cart</h2>
       <CartList />
+      <div class="total">
+        <p>Total: {{sumTotal}}</p>
+        <span>
+          <button class="btn">Check Out</button>
+        </span>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { Image } from '@/models/Image'
 import CartList from './CartList.vue'
 export default Vue.extend({
   name: 'cart',
   components: {
     CartList,
   },
-  created() {
-    window.scrollTo(0, 0)
+  computed: {
+    sumTotal() {
+      return this.$store.getters.sumTotal
+    },
   },
 })
 </script>
@@ -30,5 +39,15 @@ export default Vue.extend({
 h2 {
   font-size: 3rem;
   margin: 0 0 20px 0;
+}
+
+.total {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: flex-end;
+  & > * {
+    margin: 0;
+  }
 }
 </style>

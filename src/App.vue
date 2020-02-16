@@ -71,12 +71,11 @@ p {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 125ms;
-  transition-property: opacity;
+  transition: opacity 0.5s;
 }
 
 .fade-enter,
-.fade-leave-active {
+.fade-leave-to {
   opacity: 0;
 }
 </style>
