@@ -122,6 +122,7 @@ img {
   width: 1000px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 50px;
 
   & > div {
     padding: 0 20px;

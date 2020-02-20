@@ -44,7 +44,7 @@ export default Vue.extend({
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 5em 1em;
+  padding: 5em 1em 50px 1em;
   justify-content: center;
 }
 
