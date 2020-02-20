@@ -40,8 +40,21 @@ a {
   font-weight: bold;
 }
 
-p {
+p,
+label,
+input[type='text'],
+option {
   font: 1.1em 'Alegreya Sans', sans-serif;
+}
+
+select {
+  font: 1.1em 'Alegreya Sans', sans-serif !important;
+}
+
+input,
+select {
+  border: 1px solid black;
+  padding: 0.1em 0.5em;
 }
 
 .btn {

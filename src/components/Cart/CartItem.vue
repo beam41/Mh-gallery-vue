@@ -1,9 +1,9 @@
 <template>
   <div class="cart_item">
     <img :src="'http://localhost:3000/img/' + item.imgn" />
-    <span>
+    <span class="info">
       <h3>{{item.name}}</h3>
-      <div>
+      <div class="selectbox">
         <select v-model="selecting">
           <option
             v-for="(price, index) in item.prices"
@@ -11,14 +11,14 @@
             :key="item.imgn + index"
           >{{ price.type | capital }} – ${{ price.price }}+</option>
         </select>
-        $
+        <label>$</label>
         <input type="text" v-model="price" :class="item.priceValid ? '': 'warn'" />
       </div>
-      <div>
-        Qty
+      <div class="qty">
+        <label>Qty</label>
         <input type="text" v-model="qty" />
       </div>
-      <p>= ${{this.sumPrice}}</p>
+      <p class="sum">= ${{this.sumPrice}}</p>
       <svg
         v-on:click="delItem()"
         xmlns="http://www.w3.org/2000/svg"
@@ -92,10 +92,63 @@ export default Vue.extend({
 }
 
 img {
-  height: 200px;
+  width: 300px;
+}
+
+@media (max-width: 750px) {
+  .cart_item {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .warn {
   background: red;
+}
+
+.info {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & input {
+    width: 2em;
+  }
+
+  & label {
+    margin-right: 5px;
+  }
+
+  & > * {
+    margin: 0;
+  }
+
+  & > h3 {
+    font-size: 2em;
+  }
+
+  & > svg {
+    fill: #cb3333;
+    transition-duration: 250ms;
+
+    &:hover {
+      fill: #ef5350;
+    }
+  }
+}
+
+.selectbox {
+  & > select {
+    margin-right: 10px;
+  }
+}
+
+.sum {
+  font-size: 1.5em;
 }
 </style>

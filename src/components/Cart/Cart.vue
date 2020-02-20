@@ -4,7 +4,7 @@
       <h2>Cart</h2>
       <CartList />
       <div class="total">
-        <p>Total: {{sumTotal}}</p>
+        <p>Total: ${{sumTotal}}</p>
         <span>
           <button class="btn">Check Out</button>
         </span>
@@ -15,7 +15,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Image } from '@/models/Image'
 import CartList from './CartList.vue'
 export default Vue.extend({
   name: 'cart',
@@ -35,6 +34,8 @@ export default Vue.extend({
   box-sizing: border-box;
   padding: 90px 40px 40px 40px;
   height: 100vh;
+  max-width: 700px;
+  margin: 0 auto;
 }
 h2 {
   font-size: 3rem;
@@ -48,6 +49,10 @@ h2 {
   align-items: flex-end;
   & > * {
     margin: 0;
+  }
+
+  & p {
+    font-size: 2em;
   }
 }
 </style>
