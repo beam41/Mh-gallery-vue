@@ -43,6 +43,15 @@ const store = new Vuex.Store({
     sumTotal: state => {
       return state.carts.reduce((acc: number, curr: Image) => acc + curr.willBuy, 0)
     },
+    checkValid: state => {
+      if (state.carts.length > 0) {
+        return state.carts.reduce((acc: boolean, curr: Image) => {
+          if (acc) return curr.priceValid
+          return false
+        }, true)
+      }
+      return false
+    },
   },
 })
 

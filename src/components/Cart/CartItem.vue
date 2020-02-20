@@ -61,7 +61,9 @@ export default Vue.extend({
   computed: {
     sumPrice(): number {
       const price = this.qty * this.price
-      this.$store.dispatch('editWillBuy', { index: this.index, price })
+      if (this.$store.getters.getItems[this.index].willBuy !== price) {
+        this.$store.dispatch('editWillBuy', { index: this.index, price })
+      }
       return price
     },
   },
@@ -106,7 +108,7 @@ img {
 }
 
 .warn {
-  background: red;
+  background: #ffcdd2;
 }
 
 .info {

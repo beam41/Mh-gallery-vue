@@ -72,6 +72,17 @@ select {
     border: 2px solid white;
     outline: 3px solid black;
   }
+  &:disabled {
+    border: 2px solid gray;
+    color: gray;
+
+    &:hover {
+      background: white;
+      border: 2px solid gray;
+      outline: 3px solid white;
+      cursor: not-allowed;
+    }
+  }
 }
 
 .light {

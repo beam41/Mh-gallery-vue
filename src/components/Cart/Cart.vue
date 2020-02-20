@@ -6,7 +6,7 @@
       <div class="total">
         <p>Total: ${{sumTotal}}</p>
         <span>
-          <button class="btn">Check Out</button>
+          <button class="btn" :disabled="!checkValid">Check Out</button>
         </span>
       </div>
     </div>
@@ -24,6 +24,9 @@ export default Vue.extend({
   computed: {
     sumTotal() {
       return this.$store.getters.sumTotal
+    },
+    checkValid() {
+      return this.$store.getters.checkValid
     },
   },
 })
