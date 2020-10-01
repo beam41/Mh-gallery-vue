@@ -1,23 +1,24 @@
-# mh-gallery
+# MH-gallery
 
-## Project setup
+## Download dependacies
 ```
 yarn install
 ```
 
+
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+yarn dev
 ```
 
 ### Compiles and minifies for production
 ```
-yarn build
+yarn generate
 ```
 
 ### Lints and fixes files
 ```
-yarn lint
+yarn lint --fix
 ```
 
 ### Customize configuration
